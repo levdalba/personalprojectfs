@@ -19,19 +19,17 @@ Route::get('/', function () {
 
 });
 
-Route::get('/articles', function () {
-    $articles = [
-        [
-            'title' => 'Sample Article',
-            'content' => 'This is a sample article.',
-            'author' => 'John Doe'
-        ],
-        [
-            'title' => 'Another Article',
-            'content' => 'This is another article.',
-            'author' => 'Jane Doe'
-        ]
-    ];
+Route::get('/projects', function () {
 
-    return view('articles', ['articles' => $articles]);
+   
+    return view('projects');
+});
+
+Route::get('/aboutme', function () {
+    return view('aboutme');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+
 });

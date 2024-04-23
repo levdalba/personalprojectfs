@@ -17,8 +17,8 @@ class Navigation extends Component
     {
         $this->menu = [
             ['name' => 'Home', 'url' => '/'],
-            ['name' => 'Articles', 'url' => '/articles'],
-            ['name' => 'Writers', 'url' => '/authors'],
+            ['name' => 'Projects', 'url' => '/projects'],
+            ['name' => 'About Me', 'url' => '/aboutme'],
             ['name' => 'Contact', 'url' => '/contact'],
         ];
     }

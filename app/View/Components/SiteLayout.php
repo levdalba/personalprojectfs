@@ -16,23 +16,23 @@ class SiteLayout extends Component
     {
         $this->title = $title;
         // articles dict:
-        $this->articles = [
-            [
-                'title' => 'Article 1',
-                'body' => 'This is the body of article 1',
-                'author' => 'John Doe',
-            ],
-            [
-                'title' => 'Article 2',
-                'body' => 'This is the body of article 2',
-                'author' => 'Jane Doe',
-            ],
-            [
-                'title' => 'Article 3',
-                'body' => 'This is the body of article 3',
-                'author' => 'John Doe',
-            ],
-        ];
+        // $this->articles = [
+        //     [
+        //         'title' => 'Article 1',
+        //         'body' => 'This is the body of article 1',
+        //         'author' => 'John Doe',
+        //     ],
+        //     [
+        //         'title' => 'Article 2',
+        //         'body' => 'This is the body of article 2',
+        //         'author' => 'Jane Doe',
+        //     ],
+        //     [
+        //         'title' => 'Article 3',
+        //         'body' => 'This is the body of article 3',
+        //         'author' => 'John Doe',
+        //     ],
+        // ];
     }
 
     /**
