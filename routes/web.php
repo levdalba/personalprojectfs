@@ -1,35 +1,20 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $articles = [
-        [
-            'title' => 'Sample Article',
-            'content' => 'This is a sample article.',
-            'author' => 'John Doe'
-        ],
-        [
-            'title' => 'Another Article',
-            'content' => 'This is another article.',
-            'author' => 'Jane Doe'
-        ]
-    ];
-    return view('welcome', ['articles' => $articles]);
-
+    return view('welcome');
 });
 
-Route::get('/projects', function () {
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-   
-    return view('projects');
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/aboutme', function () {
-    return view('aboutme');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-
-});
+require __DIR__.'/auth.php';
