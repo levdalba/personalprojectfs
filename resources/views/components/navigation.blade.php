@@ -1,13 +1,11 @@
 <nav class="bg-gray-800" x-data="{ open: false }">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" >
         <div class="flex h-16 items-center justify-between">
-            <div class="flex items-center">
-                <div class="flex-shrink-0">
-                    <img class="h-12 w-12" src="/logo.png" alt="Your Company">
-                </div>
-            </div>
             <div class="hidden md:flex">
-                <div class="ml-10 flex items-baseline space-x-4">
+                <div class="ml-10 flex items-center space-x-4">
+                    <div class="flex-shrink-0">
+                        <img class="h-12 w-12" src="/logo.png" alt="Your Company">
+                    </div>
                     @foreach($menu as $item)
                         <a href="{{$item['url']}}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">{{$item['name']}}</a>
                     @endforeach
@@ -32,9 +30,8 @@
                 <div class="ml-4 flex items-center md:ml-6">
                     <div class="text-white flex flex-row justify-center gap-4">
                         @auth
-                            <span class="py-1">{{ auth()->user()->name }}</span>
+                            <span class="text-gray-300 rounded-md px-3 py-2 text-sm font-medium">{{ auth()->user()->name }}</span>
 
-                            <a href="{{ route('dashboard') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Dashboard</a>
 
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf

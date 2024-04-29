@@ -2,13 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('welcome');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -18,8 +19,6 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/projects', function () {
-
-   
     return view('projects');
 });
 
@@ -27,9 +26,7 @@ Route::get('/aboutme', function () {
     return view('aboutme');
 });
 
-Route::get('/contact', function () {
-    return view('contact');
-
-});
+Route::get('/contact', [ContactController::class, 'show']);
+Route::post('/contact', [ContactController::class, 'handleForm']);
 
 require __DIR__.'/auth.php';
