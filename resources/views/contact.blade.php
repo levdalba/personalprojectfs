@@ -17,13 +17,13 @@
 </div>
 
     <div class="container mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 ">
         <div>
             <h1 class="text-4xl font-bold text-gray-800 mb-6">Contact Me</h1>
             <p class="text-lg text-gray-600 mb-4">Got a question or proposal, or just want to say hello? Go ahead!</p>
             <div>
                 <p class="font-semibold text-gray-800">Email:</p>
-                <a href="mailto:your.email@example.com" class="text-blue-500">your.email@example.com</a>
+                <a href="mailto:levanidalbashvili00@gmail.com" class="text-blue-500">levanidalbashvili00@gmail.com</a>
                 <p class="font-semibold text-gray-800 mt-4">Follow Me:</p>
                 <div class="flex space-x-4 mt-2">
                     <a href="https://www.instagram.com/levandalbashvili/" class="text-blue-500">Instagram</a>

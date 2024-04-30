@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProjectController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,5 +29,8 @@ Route::get('/aboutme', function () {
 
 Route::get('/contact', [ContactController::class, 'show']);
 Route::post('/contact', [ContactController::class, 'handleForm']);
+
+
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 
 require __DIR__.'/auth.php';
