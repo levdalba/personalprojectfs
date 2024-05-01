@@ -38,11 +38,11 @@ Route::post('/contact', [ContactController::class, 'handleForm']);
 Route::get('/language', [LanguageController::class, 'index']);
 
 
-Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 
 // Add a name to the route for easy reference
 
 Route::get('/projects/filter', [ProjectController::class, 'filterByLanguage']);
+Route::get('/projects/filter', [ProjectController::class, 'filterByLanguage'])->name('projects.filter');
 
 
 require __DIR__ . '/auth.php';

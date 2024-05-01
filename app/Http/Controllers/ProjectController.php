@@ -24,14 +24,7 @@ class ProjectController extends Controller
         return view('projects.index', compact('projects'));
     }
 
-    public function getByLanguage($languageId)
-    {
-        $projects = Project::whereHas('languages', function ($query) use ($languageId) {
-            $query->where('languages.id', $languageId);  // Specify the table name explicitly
-        })->get();
 
-        return response()->json($projects);
-    }
 
     public function filterByLanguage(Request $request)
     {
@@ -55,4 +48,12 @@ class ProjectController extends Controller
 
 
 
+
 }
+
+
+
+
+
+
+
