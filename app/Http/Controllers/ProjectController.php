@@ -35,13 +35,20 @@ class ProjectController extends Controller
 
     public function filterByLanguage(Request $request)
     {
-        $languageId = $request->language_id;
-        $projects = Project::whereHas('languages', function ($query) use ($languageId) {
-            $query->where('languages.id', $languageId);  // Specify the table name explicitly
-        })->get();
+        $languageId = $request->input('language_id');
 
-        return response()->json($projects);
+        if ($languageId) {
+            // Explicitly specify the table name in where clauses
+            $projects = Project::whereHas('languages', function ($query) use ($languageId) {
+                $query->where('languages.id', '=', $languageId);
+            })->with('languages')->orderBy('projects.id', 'desc')->get();
+        } else {
+            $projects = Project::with('languages')->orderBy('projects.id', 'desc')->get();
+        }
+
+        return view('projects.index', compact('projects'));
     }
+
 
 
 
