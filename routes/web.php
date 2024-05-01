@@ -33,10 +33,12 @@ Route::post('/contact', [ContactController::class, 'handleForm']);
 
 
 
-Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 
 Route::get('/language', [LanguageController::class, 'index']);
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 
+// Add a name to the route for easy reference
+Route::get('/projects/language/{languageId}', [ProjectController::class, 'getByLanguage'])->name('projects.language');
 
 
 require __DIR__ . '/auth.php';
