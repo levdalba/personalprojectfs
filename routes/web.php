@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\LanguageController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,6 +32,11 @@ Route::get('/contact', [ContactController::class, 'show']);
 Route::post('/contact', [ContactController::class, 'handleForm']);
 
 
+
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 
-require __DIR__.'/auth.php';
+Route::get('/language', [LanguageController::class, 'index']);
+
+
+
+require __DIR__ . '/auth.php';
