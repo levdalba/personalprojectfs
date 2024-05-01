@@ -1,5 +1,9 @@
 <x-site-layout title="Projects Overview">
     <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center">
+            <h1 class="text-xl font-bold">{{ $language }} Projects</h1>
+            <a href="{{ url('/language') }}" class="btn bg-blue-500 text-white px-4 py-2 rounded">Back to Languages</a>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             @foreach ($projects as $project)
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" x-data="{ open: false }">
