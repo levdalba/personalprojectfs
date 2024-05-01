@@ -13,17 +13,23 @@ class ProjectController extends Controller
     public function index(Request $request)
     {
         $languageId = $request->input('language_id');
+        $language = null;
 
         if ($languageId) {
+            $language = Language::find($languageId);
             $projects = Project::whereHas('languages', function ($query) use ($languageId) {
-                $query->where('id', $languageId);
-            })->with('languages')->orderBy('id', 'desc')->get();
+                $query->where('languages.id', $languageId);
+            })->with('languages')->get();
         } else {
-            $projects = Project::with('languages')->orderBy('id', 'desc')->get();
+            $projects = Project::with('languages')->get();
         }
 
-        return view('projects.index', compact('projects'));
+        return view('projects.index', [
+            'projects' => $projects,
+            'language' => $language ? $language->title : null, // Pass language title if exists
+        ]);
     }
+
 
 
 

@@ -41,8 +41,9 @@ Route::get('/language', [LanguageController::class, 'index']);
 
 // Add a name to the route for easy reference
 
-Route::get('/projects/filter', [ProjectController::class, 'filterByLanguage']);
-Route::get('/projects/filter', [ProjectController::class, 'filterByLanguage'])->name('projects.filter');
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index'); // Display all projects
+Route::get('/projects/filter', [ProjectController::class, 'index'])->name('projects.filter'); // Handles filtering if needed
+
 
 
 require __DIR__ . '/auth.php';
