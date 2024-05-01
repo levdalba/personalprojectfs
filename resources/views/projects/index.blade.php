@@ -1,4 +1,4 @@
-<x-site-layout title="Projects Overview">
+<x-site-layout title="Projects">
     <div class="container mx-auto px-4 py-8">
         <div class="flex justify-between items-center">
             <h1 class="text-xl font-bold">{{ $language }} Projects</h1>
@@ -38,7 +38,7 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <a href="{{ $project->github_link }}" class="mt-4 inline-block bg-blue-500 text-white rounded-full px-3 py-1 hover:bg-blue-700 transition-colors">View on GitHub</a>
+                            <a href="{{ $project->Github_link }}" class="mt-4 inline-block bg-blue-500 text-white rounded-full px-3 py-1 hover:bg-blue-700 transition-colors">View on GitHub</a>
                             <button @click="open = false" class="mt-4 text-red-500">Close</button>
                         </div>
                     </div>

@@ -1,25 +1,49 @@
-<x-site-layout title="About Me Overview">
-    <div class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <!-- Personal Photo -->
+<x-site-layout title="About Me">
+    <div class="container mx-auto max-w-7xl px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center my-10">
+            <!-- Personal Photo Section -->
             <div class="flex justify-center">
-                <img src="your-photo.jpg" alt="Your Name" class="rounded-full w-48 h-48 object-cover shadow-lg">
+                <div class="w-52 h-52 rounded-full overflow-hidden shadow-xl">
+                    <img src="/pic.jpg" alt="Levan Dalbashvili" class="object-cover w-full h-full transition-transform duration-300 ease-in-out hover:scale-110">
+                </div>
             </div>
 
             <!-- About Me Content -->
-            <div>
-                <h1 class="text-3xl font-bold mb-4">About Me</h1>
-                <p class="text-lg text-gray-700 mb-4">
-                    Hello, I'm [Your Name], a passionate [Your Profession] with over [X] years of experience specializing in [Your Specialization]. I love creating solutions that make a difference and are meaningful to people's lives.
+            <div class="space-y-6">
+                <h1 class="text-4xl font-bold text-gray-800">About Me</h1>
+                <p class="text-lg text-gray-600">
+                    Hello, I'm Levan Dalbashvili, a dedicated student at Harbour Space University, focusing on Web Development. With a passion for solving complex problems through code, I have a solid foundation in both frontend and backend technologies. My academic and competitive programming background fuels my ability to design and optimize algorithms for innovative software solutions.
                 </p>
-                <h2 class="text-2xl font-bold mb-3">Skills</h2>
-                <ul class="list-disc pl-5 space-y-2">
-                    <li>Web Development</li>
-                    <li>User Interface Design</li>
-                    <li>Project Management</li>
-                    <li>More Skills...</li>
+                <h2 class="text-2xl font-bold text-gray-800">Skills</h2>
+                <ul class="list-disc pl-5 text-gray-600 space-y-2">
+                    <li>Competitive Programming</li>
+                    <li>Frontend Web Development: HTML, CSS, JavaScript, TypeScript, React</li>
+                    <li>Backend Development: PHP, Python</li>
+                    <li>Database Management: PostgreSQL</li>
+                    <li>Other Technical Skills: Material UI, Tailwind CSS, Styled Components, Redux, GIT</li>
                 </ul>
             </div>
+
         </div>
+
+        <!-- Skills Bar -->
+        <div class="mt-10 ">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 pace-y-10">Proficiency With Frameworks</h3>
+            <div class="space-y-10 ">
+                <div class="skill">
+                    <p class="font-semibold">React</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <p class="font-semibold">Laravel</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                        <div class="bg-green-600 h-2.5 rounded-full" style="width: 30%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </x-site-layout>
