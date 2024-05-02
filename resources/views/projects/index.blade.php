@@ -1,16 +1,15 @@
 <x-site-layout title="Projects">
     <div class="container mx-auto px-4 py-8">
         <div class="flex justify-between items-center">
-            <h1 class="text-xl font-bold">{{ $language }} Projects</h1>
-            @if (\Route::current()->getName() !== 'projects.index')  {{-- Check if current route is not projects.index --}}
+            @if (\Route::current()->getName() !== 'projects.index') 
+                <h1 class="text-xl font-bold">{{ $language }} Projects</h1>
                 <a href="{{ url('/language') }}" class="btn bg-blue-500 text-white px-4 py-2 rounded">Back to Languages</a>
             @endif
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             @foreach ($projects as $project)
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" x-data="{ open: false }">
                     <img src="{{ $project->project_img }}" alt="Image for {{ $project->project_name }}" class="w-full h-48 object-cover">
-
                     <div class="p-4">
                         <h2 class="text-2xl font-bold">{{ $project->project_name }}</h2>
                         <p class="text-gray-700 truncate">{{ $project->description }}</p>
@@ -39,7 +38,10 @@
                                 </div>
                             </div>
                             <a href="{{ $project->Github_link }}" class="mt-4 inline-block bg-blue-500 text-white rounded-full px-3 py-1 hover:bg-blue-700 transition-colors">View on GitHub</a>
-                            <button @click="open = false" class="mt-4 text-red-500">Close</button>
+                            <!-- Move Close button to the right -->
+                            <div class="text-right mt-4">
+                                <button @click="open = false" class="text-red-500 hover:text-red-700 transition-colors">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
