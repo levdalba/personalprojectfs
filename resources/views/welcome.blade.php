@@ -1,5 +1,5 @@
-<x-site-layout title="Welcome To My Personal Website">
-    <div class="flex items-center justify-center min-h-screen bg-gradient-to-bl from-grey-500 via-slate-600 to-purple-700">
+<x-site-layout title="< />">
+    <div class="flex items-center justify-center bg-gradient-to-bl from-grey-500 via-slate-600 to-purple-700" style="min-height: 48rem">
         <div class="text-center p-10 bg-white/80 backdrop-blur-md shadow-xl rounded-xl transition-all duration-300 ease-in-out hover:bg-white/90">
             <h1 class="text-5xl font-bold text-gray-800 mb-3 animate-pulse">Welcome, I'm Levan Dalbashvili</h1>
             <p class="text-gray-700 text-lg mb-6">Developer | Competitive Programmer | Student</p>

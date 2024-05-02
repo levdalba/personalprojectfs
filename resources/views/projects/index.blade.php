@@ -3,7 +3,7 @@
         <div class="flex justify-between items-center">
             @if (\Route::current()->getName() !== 'projects.index') 
                 <h1 class="text-xl font-bold">{{ $language }} Projects</h1>
-                <a href="{{ url('/language') }}" class="btn bg-blue-500 text-white px-4 py-2 rounded">Back to Languages</a>
+                <a href="{{ url('/language') }}" class="btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 transition duration-300 rounded mb-8">Back to Languages</a>
             @endif
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -24,7 +24,7 @@
                          x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                          x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100"
                          x-transition:leave-end="opacity-0 scale-95" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
-                        <div class="bg-white p-5 rounded-lg w-full h-full max-w-4xl max-h-full overflow-y-auto">
+                        <div class="bg-white p-5 rounded-lg w-full h-full max-w-4xl overflow-y-auto "style="max-height: 52rem">
                             <h3 class="text-xl font-bold mb-2">{{ $project->project_name }}</h3>
                             <img src="{{ $project->project_img }}" alt="{{ $project->project_name }}" class="w-full mb-4 object-cover">
                             <p>{{ $project->description }}</p>
@@ -38,7 +38,6 @@
                                 </div>
                             </div>
                             <a href="{{ $project->Github_link }}" class="mt-4 inline-block bg-blue-500 text-white rounded-full px-3 py-1 hover:bg-blue-700 transition-colors">View on GitHub</a>
-                            <!-- Move Close button to the right -->
                             <div class="text-right mt-4">
                                 <button @click="open = false" class="text-red-500 hover:text-red-700 transition-colors">Close</button>
                             </div>
